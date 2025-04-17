@@ -143,7 +143,7 @@ typedef void(*dl_status_callback)(size_t total_bytes, size_t downloaded_bytes);
 void		NET_HTTP_Init();
 void		NET_HTTP_Shutdown();
 void		NET_HTTP_ProcessEvents();
-void		NET_HTTP_AllowClient(int clientNum, netadr_t addr);
+void		NET_HTTP_AllowClient(int clientNum, const netadr_t *addr);
 void		NET_HTTP_DenyClient(int clientNum);
 int			NET_HTTP_StartServer(int port);
 void		NET_HTTP_StopServer();

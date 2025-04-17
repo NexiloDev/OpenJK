@@ -77,10 +77,10 @@ static void NET_HTTP_ServerProcessEvent() {
 	}
 }
 
-void NET_HTTP_AllowClient(int clientNum, netadr_t addr) {
-	if ( addr.type == NA_IP ) {
+void NET_HTTP_AllowClient(int clientNum, const netadr_t *addr) {
+	if ( addr->type == NA_IP ) {
 		std::lock_guard<std::mutex> lk(srv.m_clients);
-		srv.clients[clientNum] = addr;
+		srv.clients[clientNum] = *addr;
 	}
 }
 

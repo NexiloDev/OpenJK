@@ -764,7 +764,7 @@ Ghoul2 Insert End
 			// allow connected clients to use HTTP server
 			for (i = 0; i < sv_maxclients->integer; i++) {
 				if (svs.clients[i].state >= CS_CONNECTED) {
-					NET_HTTP_AllowClient(i, svs.clients[i].netchan.remoteAddress);
+					NET_HTTP_AllowClient(i, &svs.clients[i].netchan.remoteAddress);
 				}
 			}
 		}
